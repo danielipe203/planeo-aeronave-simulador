@@ -22,5 +22,5 @@ class Plotter:
         plt.title("Velocidad vs Tiempo durante el Planeo")
         plt.grid(True)
         plt.legend()
-        plt.tigjt_layout()
+        plt.tight_layout()
         plt.show()
