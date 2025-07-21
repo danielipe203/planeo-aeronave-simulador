@@ -1,26 +1,45 @@
 import matplotlib.pyplot as plt
+import os
+
 class Plotter:
-    def __init__(self):
-        pass
-    def plot_trajectory(self, distancias, alturas):
-        """Gráfica de la trayectoria (altura vs distancia)"""
-        plt.figure(figsize=(10,5))
-        plt.plot(distancias, alturas, color='blue', label='Trayectoria de Planeo')
-        plt.xlabel("Distancia horizontal (m)")
+    def __init__(self, resultados):
+        self.resultados = resultados
+
+    def plot_all(self):
+        tiempos = self.resultados["tiempos"]
+        alturas = self.resultados["alturas"]
+        distancias = self.resultados["distancias"]
+        velocidades = self.resultados["velocidades"]
+
+        # Asegurar que la carpeta exista
+        os.makedirs("graficas", exist_ok=True)
+
+        # Altura vs Tiempo
+        plt.figure()
+        plt.plot(tiempos, alturas)
+        plt.xlabel("Tiempo (s)")
         plt.ylabel("Altura (m)")
-        plt.title("Simulación de Trayectoria de Planeo")
+        plt.title("Altura vs Tiempo")
         plt.grid(True)
-        plt.legend()
         plt.tight_layout()
-        plt.show()
-    def plot_velocity(self, tiempos, velocidades):
-        """Gráfica de velocidad vs tiempo"""
-        plt.figure(figsize=(10, 5))
-        plt.plot(tiempos, velocidades, color='green', label='Velocidad')
+        plt.savefig("graficas/altura_vs_tiempo.png")
+
+        # Distancia vs Tiempo
+        plt.figure()
+        plt.plot(tiempos, distancias)
+        plt.xlabel("Tiempo (s)")
+        plt.ylabel("Distancia (m)")
+        plt.title("Distancia vs Tiempo")
+        plt.grid(True)
+        plt.tight_layout()
+        plt.savefig("graficas/distancia_vs_tiempo.png")
+
+        # Velocidad vs Tiempo
+        plt.figure()
+        plt.plot(tiempos, velocidades)
         plt.xlabel("Tiempo (s)")
         plt.ylabel("Velocidad (m/s)")
-        plt.title("Velocidad vs Tiempo durante el Planeo")
+        plt.title("Velocidad vs Tiempo")
         plt.grid(True)
-        plt.legend()
         plt.tight_layout()
-        plt.show()
+        plt.savefig("graficas/velocidad_vs_tiempo.png")
