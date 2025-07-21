@@ -1,10 +1,10 @@
-# ✈️ Simulador de Planeo de Aeronave sin Motor
+# ✈ Simulador de Planeo de Aeronave sin Motor
 
 Este proyecto simula el planeo de una aeronave sin motor a partir de condiciones iniciales, permitiendo estimar la trayectoria, distancia recorrida, tiempo de planeo y velocidad final. La visualización incluye gráficas de comportamiento clave de la simulación.
 
 ---
 
-## 👨‍💻 Integrantes del equipo
+## Integrantes del equipo
 
 - **Daniel Felipe Segura** – Simulación de vuelo (`flight_simulator.py`)
 - **Alejandra Zapata** – Modelo físico del avión (`aircraft.py`)
@@ -12,13 +12,13 @@ Este proyecto simula el planeo de una aeronave sin motor a partir de condiciones
 
 ---
 
-## 🎯 Objetivo del proyecto
+## Objetivo del proyecto
 
 Diseñar un simulador que permita modelar el comportamiento de una aeronave sin propulsión tras una falla, estimando su capacidad de planeo y apoyando decisiones para un aterrizaje seguro.
 
 ---
 
-## 🧮 Parámetros de entrada
+## Parámetros de entrada
 
 El sistema recibe:
 
@@ -32,7 +32,7 @@ El sistema recibe:
 
 ---
 
-## 🧠 ¿Qué simula?
+## ¿Qué simula?
 
 - La evolución de la altura, velocidad y posición horizontal en función del tiempo.
 - Las fuerzas de sustentación y arrastre.
@@ -41,7 +41,7 @@ El sistema recibe:
 
 ---
 
-## 📊 Visualización de resultados
+## Visualización de resultados
 
 El sistema genera automáticamente tres gráficas al finalizar la simulación:
 
@@ -53,7 +53,7 @@ Estas se guardan en la carpeta `/graficas` como archivos `.png`.
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **Python 3**
 - `numpy`
@@ -62,7 +62,7 @@ Estas se guardan en la carpeta `/graficas` como archivos `.png`.
 
 ---
 
-## ▶️ Ejecución del simulador
+##  Ejecución del simulador
 
 1. Clona el repositorio:
    ```bash
