@@ -45,8 +45,7 @@ El sistema recibe:
 
 El sistema genera automáticamente tres gráficas al finalizar la simulación:
 
-- Altura vs Tiempo
-- Distancia vs Tiempo
+- simulacion de trayectoria de planeo
 - Velocidad vs Tiempo
 
 Estas se guardan en la carpeta `/graficas` como archivos `.png`.
