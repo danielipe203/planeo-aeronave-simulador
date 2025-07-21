@@ -9,7 +9,7 @@ class FlightSimulator:
         self.rho = rho  # Densidad del aire
         self.g = 9.81  # Gravedad
 
-    def simulate(self, dt=0.1):
+    def simulate(self, dt = 0.1):
         # Inicializar condiciones
         h = self.h0
         v = self.v0
@@ -27,18 +27,20 @@ class FlightSimulator:
         velocidades = [v]
         tiempos = [t]
 
-        # Bucle de simulación
-        max_iter = 10000  # Límite de iteraciones por seguridad
-        while h > 0 and max_iter > 0:
-            ...
-            max_iter -= 1
+        max_iter = 10000  # Para evitar bucles infinitos
 
+        while h > 0 and max_iter > 0:
             # Calcular fuerzas
             L = 0.5 * self.rho * v**2 * S * CL
             D = 0.5 * self.rho * v**2 * S * CD
 
+            # Evitar división por cero
+            if L == 0:
+                print("⚠️ Advertencia: Sustentación es cero. Se detiene la simulación.")
+                break
+
             # Ángulo de planeo (simplificado)
-            theta = np.arctan(D / L)
+            theta = np.arctan2(D, L)  # Más seguro que D / L
 
             # Componentes de velocidad
             vx = v * np.cos(theta)
@@ -49,11 +51,10 @@ class FlightSimulator:
             h += vy * dt
             t += dt
 
-            # Actualizar velocidad (resistencia)
+            # Actualizar velocidad por arrastre
             a_drag = D / m
             v -= a_drag * dt
-            if v < 0:
-                v = 0.1  # Para evitar que se detenga
+            v = max(v, 0.1)  # evitar que se vuelva 0
 
             # Guardar valores
             alturas.append(h)
@@ -61,10 +62,15 @@ class FlightSimulator:
             velocidades.append(v)
             tiempos.append(t)
 
-        # Retornar los resultados
-        return {
+            max_iter -= 1
+
+        if max_iter == 0:
+            print("⚠️ Simulación detenida por exceso de iteraciones.")
+
+        return{
             "alturas": alturas,
             "distancias": distancias,
             "velocidades": velocidades,
             "tiempos": tiempos
-        }
+            }
+
