@@ -1,4 +1,4 @@
-# ✈ Simulador de Planeo de Aeronave sin Motor
+#  Simulador de Planeo de Aeronave sin Motor
 
 Este proyecto simula el planeo de una aeronave sin motor a partir de condiciones iniciales, permitiendo estimar la trayectoria, distancia recorrida, tiempo de planeo y velocidad final. La visualización incluye gráficas de comportamiento clave de la simulación.
 
@@ -64,7 +64,7 @@ Estas se guardan en la carpeta `/graficas` como archivos `.png`.
 
 ##  Ejecución del simulador
 
-1. Clona el repositorio:
+1. Clona el repositorio(ejecutar main.py):
    ```bash
    git clone https://github.com/danielipe203/planeo-aeronave-simulador.git
    cd planeo-aeronave-simulador
