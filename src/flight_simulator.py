@@ -28,7 +28,11 @@ class FlightSimulator:
         tiempos = [t]
 
         # Bucle de simulación
-        while h > 0:
+        max_iter = 10000  # Límite de iteraciones por seguridad
+        while h > 0 and max_iter > 0:
+            ...
+            max_iter -= 1
+
             # Calcular fuerzas
             L = 0.5 * self.rho * v**2 * S * CL
             D = 0.5 * self.rho * v**2 * S * CD
